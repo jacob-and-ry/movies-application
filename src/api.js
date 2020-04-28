@@ -11,7 +11,8 @@ module.exports = {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(movieData),
-    }).then( response => response.json() )
+    })
+        .then( response => response.json() )
         .then( data => console.log(data) )
   }
 };
