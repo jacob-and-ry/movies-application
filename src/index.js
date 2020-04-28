@@ -7,7 +7,8 @@ sayHello('World');
 /**
  * require style imports
  */
-const {getMovies} = require('./api.js');
+const {getMovies, postMovie} = require('./api.js');
+
 
 function refreshMovies () {
   getMovies()
@@ -26,14 +27,19 @@ function refreshMovies () {
 refreshMovies();
 
 function addMovie () {
-  movies.push({
-    "title": $("#movie-title-input").val(),
-    "rating": $("#rating").val(),
-    "id": movies.length,
-  });
+    postMovie().then((movies) => {
+        $('#load').html('');
+        console.log('Here are all the movies:');
+        movies.forEach(({title, rating, id}) => {
+            console.log(`id#${movies.length} - ${$("#movie-title-input").val()} - rating: ${$("#rating").val()}`);
+        });
+    }).catch((error) => {
+        alert('Oh no! Something went wrong.\nCheck the console for details.');
+        console.log(error);
+    });
 }
 
 $("#add-button").click(function () {
   addMovie();
-  refreshMovies();
+  // refreshMovies();
 });
