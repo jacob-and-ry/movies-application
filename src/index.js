@@ -26,20 +26,6 @@ function refreshMovies () {
 
 refreshMovies();
 
-function addMovie () {
-    postMovie().then((movies) => {
-        $('#load').html('');
-        console.log('Here are all the movies:');
-        movies.forEach(({title, rating, id}) => {
-            console.log(`id#${movies.length} - ${$("#movie-title-input").val()} - rating: ${$("#rating").val()}`);
-        });
-    }).catch((error) => {
-        alert('Oh no! Something went wrong.\nCheck the console for details.');
-        console.log(error);
-    });
-}
-
 $("#add-button").click(function () {
-  addMovie();
-  // refreshMovies();
+    postMovie()
 });
