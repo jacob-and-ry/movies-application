@@ -27,5 +27,8 @@ function refreshMovies () {
 refreshMovies();
 
 $("#add-button").click(function () {
-    postMovie()
+    postMovie({
+        "title": $("#movie-title-input").val(),
+        "rating": $("#rating").val()
+    })
 });
