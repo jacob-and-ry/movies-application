@@ -1,24 +1,29 @@
 {
   "movies": [
     {
-      "title": "Casablanca",
-      "rating": "4",
+      "title": "SuperBad",
+      "rating": "5",
       "id": 1
     },
     {
-      "title": "Star Wars: A New Hope",
+      "title": "Step Brothers",
       "rating": "5",
       "id": 2
     },
     {
-      "title": "Heat",
+      "title": "Elf",
       "rating": "5",
       "id": 3
     },
     {
-      "title": "",
-      "rating": "1",
+      "title": "The Room",
+      "rating": "3",
       "id": 4
+    },
+    {
+      "title": "The Disaster Artist",
+      "rating": "5",
+      "id": 5
     }
   ]
 }
