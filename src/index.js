@@ -20,16 +20,16 @@ function refreshMovies() {
             console.log('Here are all the movies:');
             movies.forEach(({title, rating, id}) => {
                 console.log(`id#${id} - ${title} - rating: ${rating}`);
-                movieCard =  `    <div class="card m-3" style="width: 18rem;">
-        <div class="card-header">
+                movieCard =  `    <div class="card m-3 border-danger" style="width: 18rem;">
+        <div class="card-header bg-danger text-center">
             ${title}
             <button type="button" class="close" aria-label="Close" data-id="${id}">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush text-center">
             <li class="list-group-item">Rating: ${rating} stars</li>
-            <li class="list-group-item"> <button type="submit" class="btn btn-secondary d-flex m-auto edit" data-id="${id}" id="edit-button" >Edit</button></li>
+            <li class="list-group-item"> <button type="submit" class="btn btn-danger d-flex m-auto edit" data-id="${id}" id="edit-button" >Edit</button></li>
         </ul>
     </div>`;
 

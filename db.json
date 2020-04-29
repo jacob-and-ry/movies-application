@@ -6,14 +6,34 @@
       "id": 5
     },
     {
-      "title": "title",
-      "rating": "1",
+      "title": "Joker",
+      "rating": "5",
       "id": 6
     },
     {
-      "title": "title",
-      "rating": "2",
+      "title": "The Godfather",
+      "rating": "5",
       "id": 7
+    },
+    {
+      "title": "Tommy Boy",
+      "rating": "5",
+      "id": 8
+    },
+    {
+      "title": "Killer Clowns from Outer Space",
+      "rating": "1",
+      "id": 9
+    },
+    {
+      "title": "Rubber",
+      "rating": "2",
+      "id": 10
+    },
+    {
+      "title": "Thunderball",
+      "rating": "5",
+      "id": 11
     }
   ]
 }
