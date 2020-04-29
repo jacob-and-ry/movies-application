@@ -6,3 +6,5 @@ main.js
 *.map
 
 package-lock.json
+
+db.json
