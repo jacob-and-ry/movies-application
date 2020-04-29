@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/ed0e4d571c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
+<h1 class="text-white text-center"><i class="fas fa-film"></i>  Movie App</h1><a href="#review-movie">Review a Movie</a>
 <div id="load">
     <button class="btn btn-secondary d-flex mt-4 mx-auto" type="button" disabled>
         <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
@@ -31,13 +33,13 @@
 <!--    </div>-->
 </div>
 
-
+<h2 class="text-white" id="review-movie">Review a Movie</h2>
 <form id="add-movie">
-    <div class="form-group">
+    <div class="form-group text-white">
         <label for="movie-title-input" >Movie Title</label>
         <input type="text" class="form-control" id="movie-title-input" placeholder="Movie Title">
     </div>
-    <div class="form-group">
+    <div class="form-group text-white">
         <label for="rating">Rate This Title</label>
         <select class="form-control" id="rating">
             <option>1</option>
@@ -47,7 +49,7 @@
             <option>5</option>
         </select>
     </div>
-    <button type="submit" class="btn btn-secondary" id="add-button">Submit</button>
+    <button type="submit" class="btn btn-danger" id="add-button">Submit</button>
 </form>
 
 
