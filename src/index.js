@@ -27,7 +27,7 @@ function refreshMovies() {
                     "            </button>\n" +
                     "        </div>\n" +
                     "        <ul class=\"list-group list-group-flush\">\n" +
-                    "            <li class=\"list-group-item\">Rating: " + rating + " stars</li>\n" +
+                    "            <li class=\"list-group-item\" id=\"rating\">Rating: " + rating + " stars</li>\n" +
                     "            <li class=\"list-group-item\"> <button type=\"button\" class=\"btn btn-secondary d-flex m-auto edit\" id=\"edit-button\">Edit</button></li>\n" +
                     "        </ul>\n" +
                     "    </div>"
@@ -35,12 +35,15 @@ function refreshMovies() {
                 $("#card-section").append(movieCard);
             });
             let currentTitle = movies.title;
-            let currentRating = movies.rating
+            let currentRating = movies.rating;
             $("#edit-button").click(function () {
+                movieCard = "";
                 let editedTitle = prompt("What is the edited movie title?");
                 let editedRating = prompt("What is its rating?");
                 currentTitle = editedTitle;
                 currentRating = editedRating;
+                $(".card-header").html(currentTitle);
+                $("#rating").html("Rating: " + currentRating + " stars");
                 console.log(currentRating);
                 console.log(currentTitle);
             });
