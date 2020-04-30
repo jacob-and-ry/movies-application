@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-<h1 class="text-white text-center"><i class="fas fa-film"></i>  Movie App</h1><a href="#review-movie">Review a Movie</a>
+<a href="#review-movie" class="text-danger">Review a Movie</a>
+<h1 class="text-white text-center"><i class="fas fa-film"></i>  Movie App</h1>
 <div id="load">
     <button class="btn btn-secondary d-flex mt-4 mx-auto" type="button" disabled>
         <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
@@ -51,6 +52,41 @@
     </div>
     <button type="submit" class="btn btn-danger" id="add-button">Submit</button>
 </form>
+
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Edit Movie Review</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-movie">
+                    <div class="form-group text-white">
+                        <label for="movie-title-edit" >Movie Title</label>
+                        <input type="text" class="form-control" id="movie-title-edit" placeholder="Movie Title">
+                    </div>
+                    <div class="form-group text-white">
+                        <label for="rating">Rate This Title</label>
+                        <select class="form-control" id="rating-edit">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" data-id="${id}" id="save-changes">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
