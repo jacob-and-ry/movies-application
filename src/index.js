@@ -13,8 +13,10 @@ const {getMovies, postMovie, editMovie, deleteMovie} = require('./api.js');
 
 function refreshMovies() {
     $("#card-section").empty();
+    $("#add-button").attr("disabled", true);
     getMovies()
         .then((movies) => {
+            $("#add-button").attr("disabled", false);
             $('#load').html('');
             let movieCard = "";
             console.log('Here are all the movies:');
@@ -69,7 +71,8 @@ $("#add-button").click(function () {
     postMovie({
         "title": $("#movie-title-input").val(),
         "rating": $("#rating").val()
-    })
+    });
+    refreshMovies();
 });
 
 
