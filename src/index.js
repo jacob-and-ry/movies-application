@@ -22,7 +22,7 @@ function refreshMovies() {
             console.log('Here are all the movies:');
             movies.forEach(({title, rating, id}) => {
                 console.log(`id#${id} - ${title} - rating: ${rating}`);
-                movieCard =  `    <div class="card m-3 border-danger" style="width: 18rem;">
+                movieCard = `    <div class="card m-3 border-danger" style="width: 18rem;">
         <div class="card-header bg-danger text-center">
             ${title}
             <button type="button" class="close" aria-label="Close" data-id="${id}">
@@ -31,30 +31,38 @@ function refreshMovies() {
         </div>
         <ul class="list-group list-group-flush text-center">
             <li class="list-group-item">Rating: ${rating} stars</li>
-            <li class="list-group-item"> <button type="submit" class="btn btn-danger d-flex m-auto edit" data-id="${id}" id="edit-button" >Edit</button></li>
+            <li class="list-group-item"> 
+            <button type="button" class="btn btn-danger edit-button" data-id="${id}" data-toggle="modal" data-target="#edit">Edit</button></li>
         </ul>
     </div>`;
-
+                // <button type="submit" class="btn btn-danger d-flex m-auto edit" data-id="${id}" id="edit-button" >Edit</button>
 
                 $("#card-section").append(movieCard);
             });
-            $('.edit').click(function () {
+            $(".edit-button").click(function(){
+              let movieId = $(this).attr('data-id');
+              $("#save-changes").attr('data-id', movieId)
+            });
+            $('#save-changes').click(function () {
+                $("#card-section").empty();
                 movieCard = "";
-                let editedTitle = prompt("What is the edited movie title?");
-                let editedRating = prompt("What is its rating?");
-                let dataID = $(this).attr('data-id');
+                let editedTitle = $("#movie-title-edit").val();
+                let editedRating = $("#rating-edit").val();
+                // let dataID = $(".edit-button").attr('data-id');
+                let saveId = $("#save-changes").attr('data-id');
+console.log(saveId)
                 let data = {
                     title: editedTitle,
                     rating: editedRating,
                 };
-                editMovie(data, dataID);
+                editMovie(data, saveId);
                 refreshMovies();
             });
             $('.close').click(function () {
                 let dataID = $(this).attr('data-id');
                 let data = {
-                    title:'',
-                    rating:'',
+                    title: '',
+                    rating: '',
                 };
                 deleteMovie(data, dataID);
                 refreshMovies();
