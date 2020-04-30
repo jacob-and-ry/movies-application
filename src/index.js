@@ -43,21 +43,7 @@ function refreshMovies() {
               let movieId = $(this).attr('data-id');
               $("#save-changes").attr('data-id', movieId)
             });
-            $('#save-changes').click(function () {
-                $("#card-section").empty();
-                movieCard = "";
-                let editedTitle = $("#movie-title-edit").val();
-                let editedRating = $("#rating-edit").val();
-                // let dataID = $(".edit-button").attr('data-id');
-                let saveId = $("#save-changes").attr('data-id');
-console.log(saveId)
-                let data = {
-                    title: editedTitle,
-                    rating: editedRating,
-                };
-                editMovie(data, saveId);
-                refreshMovies();
-            });
+
             $('.close').click(function () {
                 let dataID = $(this).attr('data-id');
                 let data = {
@@ -74,6 +60,22 @@ console.log(saveId)
 }
 
 refreshMovies();
+
+$('#save-changes').click(function () {
+    $("#card-section").empty();
+    // movieCard = "";
+    let editedTitle = $("#movie-title-edit").val();
+    let editedRating = $("#rating-edit").val();
+    // let dataID = $(".edit-button").attr('data-id');
+    let saveId = $("#save-changes").attr('data-id');
+    console.log(saveId)
+    let data = {
+        title: editedTitle,
+        rating: editedRating,
+    };
+    editMovie(data, saveId);
+    refreshMovies();
+});
 
 $("#add-button").click(function () {
     postMovie({
