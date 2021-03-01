@@ -6,11 +6,6 @@
       "id": 5
     },
     {
-      "title": "Pinapple Express",
-      "rating": "4",
-      "id": 6
-    },
-    {
       "title": "another movie",
       "rating": "3",
       "id": 7
@@ -24,16 +19,6 @@
       "title": "Rubber",
       "rating": "2",
       "id": 10
-    },
-    {
-      "title": "Thunderball",
-      "rating": "5",
-      "id": 11
-    },
-    {
-      "title": "New Movie",
-      "rating": "3",
-      "id": 12
     },
     {
       "title": "Heat",
